@@ -28,7 +28,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="demo name"
-        android:textStyle="bold" />
+         />
 
 
     <TextView
@@ -41,7 +41,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="demo name"
-        android:textStyle="bold" />
+         />
 
 
     <TextView

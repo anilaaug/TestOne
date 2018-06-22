@@ -25,7 +25,6 @@ public class SignUp extends AppCompatActivity {
     String userFirstName, userLastName, userPhoneno, userEmail, userDob, confirmPassword;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +46,7 @@ public class SignUp extends AppCompatActivity {
                 userEmail = email.getText().toString().trim();
                 userDob = dateOfBirth.getText().toString().trim();
                 confirmPassword = confirmPass.getText().toString().trim();
+
                 Pattern namePattern = Pattern.compile("[A-Za-z]{1,10}");
                 Matcher firstnameMatch = namePattern.matcher(userFirstName);
                 Matcher lastnameMatch = namePattern.matcher(userLastName);
@@ -54,6 +54,7 @@ public class SignUp extends AppCompatActivity {
                 Matcher emailMatch = emailPattern.matcher(userEmail);
                 Pattern phPattern = Pattern.compile("^[7-9][0-9]{9}$");
                 Matcher phoneMatch = phPattern.matcher(userPhoneno);
+                //validation of the Name,PhoneNumber and email
                 if(!(firstnameMatch.matches()||!(lastnameMatch.matches())))
                 {
                     firstName.setError("inappropriate Name");
@@ -72,16 +73,6 @@ public class SignUp extends AppCompatActivity {
                     Intent myIntent = new Intent(SignUp.this, Login.class);
                     SignUp.this.startActivity(myIntent);
                 }
-
-
-//                if (f_nameMatch.matches() && l_nameMatch.matches())
-//                    if (emailMatch.matches() && phoneMatch.matches()) {
-//                        Toast.makeText(SignUp.this, "UserRegistration completed", Toast.LENGTH_SHORT).show();
-//                        UserDetails ud = new UserDetails(userFirstName, userLastName, userPhoneno, userEmail, userDob, confirmPassword);
-//                        Intent myIntent = new Intent(SignUp.this, Login.class);
-//                        SignUp.this.startActivity(myIntent);
-//                    } else
-//                        Toast.makeText(SignUp.this, "INVALID", Toast.LENGTH_SHORT).show();
 
             }
         });

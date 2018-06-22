@@ -4,25 +4,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Profile extends AppCompatActivity {
+public class Profile extends AppCompatActivity
+{
 
+    TextView name,email,phone,dob,passWord;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        TextView name, email,ph,dob,user,pass;
         name=findViewById(R.id.user_name);
         email=findViewById(R.id.user_email);
-        ph=findViewById(R.id.user_phone);
+        phone=findViewById(R.id.user_phone);
         dob=findViewById(R.id.user_dob);
-
-        pass=findViewById(R.id.user_password);
-
+        passWord=findViewById(R.id.user_password);
         name.setText("Name : "+UserDetails.getUserFirst_Name()+" "+UserDetails.getUserLast_Name());
         email.setText("Email : "+UserDetails.getEmail());
-        ph.setText("phone : "+UserDetails.getPhoneNo());
+        phone.setText("phone : "+UserDetails.getPhoneNo());
         dob.setText("Dob : "+UserDetails.getDate_of_birth());
-        pass.setText("Password : "+UserDetails.getConfirmPassWord());
+        passWord.setText("Password : "+UserDetails.getConfirmPassWord());
 
     }
 }

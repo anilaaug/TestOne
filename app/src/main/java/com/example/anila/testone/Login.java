@@ -9,37 +9,35 @@ import android.widget.EditText;
 
 public class Login extends AppCompatActivity {
 
-    Button b1,b2;
-    EditText passWord,userName;
-    String name,userPassword;
+    Button b1, b2;
+    EditText passWord, userName;
+    String name, userPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        b1=findViewById(R.id.button);
-        passWord=findViewById(R.id.password);
-        userName=findViewById(R.id.username);
-
+        b1 = findViewById(R.id.button);
+        passWord = findViewById(R.id.password);
+        userName = findViewById(R.id.username);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent=new Intent(Login.this,SignUp.class);
+                Intent myIntent = new Intent(Login.this, SignUp.class);
                 Login.this.startActivity(myIntent);
 
             }
         });
-        b2=findViewById(R.id.login);
+        b2 = findViewById(R.id.login);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name=userName.getText().toString().trim();
-                userPassword=passWord.getText().toString().trim();
-                String a=UserDetails.getEmail();
-                String b=UserDetails.getConfirmPassWord();
-                if(name.equals(UserDetails.getEmail())&&userPassword.equals(UserDetails.getConfirmPassWord()))
-                {
-                    Intent myIntent=new Intent(Login.this,Profile.class);
+                name = userName.getText().toString().trim();
+                userPassword = passWord.getText().toString().trim();
+                //Validation of the Email and password in the login page
+                if (name.equals(UserDetails.getEmail()) && userPassword.equals(UserDetails.getConfirmPassWord())) {
+                    Intent myIntent = new Intent(Login.this, Profile.class);
                     Login.this.startActivity(myIntent);
                 }
             }
